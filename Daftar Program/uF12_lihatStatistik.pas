@@ -1,43 +1,45 @@
-unit uF10_namaTemplate; //Ganti : sesuaikan dengan nama file, tapi tanpa ".pas"
+unit uF12_lihatStatistik; //Ganti : sesuaikan dengan nama file, tapi tanpa ".pas"
 
 interface
 
-uses uP1_tipeBentukan, uP3_Umum;
+uses uP1_tipeBentukan;
 
-	procedure mainNamaTemplate(ID : integer; //hapus parameter yang tidak perlu
+	procedure mainStartSimulasi(ID : integer;
 									var dataBahanMentah : tabelBahanMentah; 
 									var dataBahanOlahan : tabelBahanOlahan; 
 									var dataResep : tabelResep; 
-									var dataSimulasi : tabelSimulasi); 
-	{ I.S : Bagaimana keadaan awal dari tiap variabel pada parameter?
-	* F.S : Bagaimana keadaan akhir dari tiap variabel pada parameter?}
+									var dataSimulasi : tabelSimulasi;
+									var dataInventoriBahanMentah : tabelBahanMentah;
+									var dataInventoriBahanOlahan : tabelBahanOlahan);	
+									
+
 	
-	procedure contohProsedurPembantu(ID : integer; //hapus parameter yang tidak perlu
-									var dataBahanMentah : tabelBahanMentah; 
-									var dataBahanOlahan : tabelBahanOlahan; 
-									var dataResep : tabelResep; 
-									var dataSimulasi : tabelSimulasi); );
-	{ I.S : Bagaimana keadaan awal dari tiap variabel pada parameter?
-	* F.S : Bagaimana keadaan akhir dari tiap variabel pada parameter?}
-
+	{ I.S : Membaca data dari variabel data yang mau ditampilkan
+	* F.S : Menampilkan data yang mau ditampilkan}
+	
+	
+	
 implementation
 
-	procedure mainNamaTemplate(ID : integer; //hapus parameter yang tidak perlu
+	procedure mainStartSimulasi(ID : integer;
 									var dataBahanMentah : tabelBahanMentah; 
 									var dataBahanOlahan : tabelBahanOlahan; 
 									var dataResep : tabelResep; 
-									var dataSimulasi : tabelSimulasi); 
-	{ I.S : Bagaimana keadaan awal dari tiap variabel pada parameter?
-	* F.S : Bagaimana keadaan akhir dari tiap variabel pada parameter?}
-	
-	procedure contohProsedurPembantu(ID : integer; //hapus parameter yang tidak perlu
-									var dataBahanMentah : tabelBahanMentah; 
-									var dataBahanOlahan : tabelBahanOlahan; 
-									var dataResep : tabelResep; 
-									var dataSimulasi : tabelSimulasi); );
-	{ I.S : Bagaimana keadaan awal dari tiap variabel pada parameter?
-	* F.S : Bagaimana keadaan akhir dari tiap variabel pada parameter?}	
+									var dataSimulasi : tabelSimulasi;
+									var dataInventoriBahanMentah : tabelBahanMentah;
+									var dataInventoriBahanOlahan : tabelBahanOlahan);	
 
+	begin
+		writeln('Hari 			: ',dataSimulasi.itemKe[ID].jumlahHariHidup);
+		writeln('Energi 		: ',dataSimulasi.itemKe[ID].jumlahEnergi);
+		writeln('Duit			: ',dataSimulasi.itemKe[ID].jumlahDuit);
+		writeln('Pengeluaran	: ',dataSimulasi.itemKe[ID].totalPemasukan);
+		writeln('Pemasukan		: ',dataSimulasi.itemKe[ID].totalPengeluaran);
+		writeln('Bahan Mentah 	: ',dataInventoriBahanMentah.banyakItem);
+		writeln('Bahan Baku 	: ',dataInventoriBahanOlahan.banyakItem);	
+
+	end;
+		
 end.
 
 { TIPS DAN CARA MEMPROGRAM DARI UNIT
@@ -48,3 +50,9 @@ end.
 * 5. Silahkan perhatikan baik-baik untup tipedata bentukan di uP1_tipeBentukan.pas
 * 
 * }
+		
+
+
+
+{Ingat, urang cupu, perlu banyak teach me, walaupun lu mastah kayak ndewo.}
+
