@@ -55,4 +55,3 @@ implementation
 		until (X = 1) or (X = 2);
 	end;
 end.
-	
